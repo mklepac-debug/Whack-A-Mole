@@ -1,9 +1,9 @@
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
-// TODO: Add the missing query selectors:
-const score; // Use querySelector() to get the score element
-const timerDisplay; // use querySelector() to get the timer element.
+// TODO: Add the missing query selectors: DONE MK 09/24/2025
+const score = document.querySelector('#score');  // Use querySelector() to get the score element - selects <span id=score"> from the index.html MK 9/24/25
+const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element. - selects <span id=timer"> from the index.html MK 9/24/25
 
 let time = 0;
 let timer;
