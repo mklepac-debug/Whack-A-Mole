@@ -68,8 +68,14 @@ function setDelay(difficulty) {
  * chooseHole(holes) //> returns one of the 9 holes that you defined
  */
 function chooseHole(holes) {
-  // TODO: Write your code here.
-
+  // TODO: Write your code here. DONE MK 09/24/2025
+  const index = randomInteger(0, 8); /* generate random int from 0 to 8 */
+  const hole = hole[index]; /* get a random hole with the random indext */
+  if (hole === lastHole) { /* if hole === lastHole then re-call chooseHole(hole) again */
+    return chooseHole(holes);
+  }
+  lastHole = hole; /* if hole is not the same as the lastHole then keep track of it and return hole */
+  return hole;
 }
 
 /**
