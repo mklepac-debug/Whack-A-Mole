@@ -21,7 +21,7 @@ let difficulty = "hard";
  *
  */
 function randomInteger(min, max) {
-  // return Math.floor(Math.random() * (max - min + 1)) + min;
+   return Math.floor(Math.random() * (max - min + 1)) + min; //DONE MK 09/24/2025
 }
 
 /**
@@ -40,9 +40,18 @@ function randomInteger(min, max) {
  *
  */
 function setDelay(difficulty) {
-  // TODO: Write your code here.
-  
-}
+  // TODO: Write your code here. DONE MK 09/24/2025
+  if (difficulty === "easy") {
+    return 1500;
+  }
+  else if (difficulty === "normal") {
+    return 1000;
+  }
+  else if (difficulty === "hard") {
+    return randomInteger(600, 1200);
+  }
+} 
+
 
 /**
  * Chooses a random hole from a list of holes.
