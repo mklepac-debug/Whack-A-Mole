@@ -99,8 +99,15 @@ function chooseHole(holes) {
 *
 */
 function gameOver() {
-  // TODO: Write your code here
-  
+  // TODO: Write your code here -- DONE MK 09/24/2025
+   if (time > 0) { 
+     const timeoutId = showUp(); // keep going
+     return timeoutId;
+   }
+   else {
+     const gameStopped = stopGame(); // stop
+     return gameStopped;
+   }
 }
 
 /**
@@ -113,8 +120,11 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = 0; // TODO: Update so that it uses setDelay()
-  const hole = 0;  // TODO: Update so that it use chooseHole()
+  // let delay = 0; // TODO: Update so that it uses setDelay() -- DONE MK 09/24/2025
+  const delay = setDelay(difficulty);
+  // const hole = 0;  // TODO: Update so that it use chooseHole() -- DONE MK 09/24/2025
+  const hole = chooseHole(holes);
+
   return showAndHide(hole, delay);
 }
 
@@ -127,13 +137,15 @@ function showUp() {
 *
 */
 function showAndHide(hole, delay){
-  // TODO: call the toggleVisibility function so that it adds the 'show' class.
-  
+  // TODO: call the toggleVisibility function so that it adds the 'show' class. --DONE MK 09/24/2025
+  toggleVisibility(hole);
+
   const timeoutID = setTimeout(() => {
-    // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
-    
-    gameOver();
-  }, 0); // TODO: change the setTimeout delay to the one provided as a parameter
+    // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out. --DONE MK 09/24/2025
+    toggleVisibility(hole); 
+
+    gameOver(); //Check if the game is over
+  }, delay); // TODO: change the setTimeout delay to the one provided as a parameter --DONE MK 09/24/2025
   return timeoutID;
 }
 
@@ -143,9 +155,9 @@ function showAndHide(hole, delay){
 * a given hole. It returns the hole.
 *
 */
-function toggleVisibility(hole){
+function toggleVisibility(hole) {
   // TODO: add hole.classList.toggle so that it adds or removes the 'show' class.
-  
+  hole.classList.toggle('show'); /* DONE MK 9/24/25 */
   return hole;
 }
 
