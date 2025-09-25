@@ -70,7 +70,7 @@ function setDelay(difficulty) {
 function chooseHole(holes) {
   // TODO: Write your code here. DONE MK 09/24/2025
   const index = randomInteger(0, 8); /* generate random int from 0 to 8 */
-  const hole = hole[index]; /* get a random hole with the random indext */
+  const hole = holes[index]; /* get a random hole with the random indext */
   if (hole === lastHole) { /* if hole === lastHole then re-call chooseHole(hole) again */
     return chooseHole(holes);
   }
@@ -211,8 +211,8 @@ function updateTimer() {
 *
 */
 function startTimer() {
-  // TODO: Write your code here
-  // timer = setInterval(updateTimer, 1000);
+  // TODO: Write your code here. --DONE MK 09/24/2025
+  timer = setInterval(updateTimer, 1000); //uncommented the code
   return timer;
 }
 
@@ -236,10 +236,10 @@ function whack(event) {
 * for an example on how to set event listeners using a for loop.
 */
 function setEventListeners(){
-  // TODO: Write your code here
+  // TODO: Write your code here -- DONE MK 09/24/2025
   // loop over the moles
   moles.forEach(mole => { 
-    mole.addEventListener('clock', whack); // click listener for each moles
+    mole.addEventListener('click', whack); // click listener for each moles
   });
   return moles;
 }
