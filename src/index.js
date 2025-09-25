@@ -9,7 +9,7 @@ let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "easy";
 
 /**
  * Generates a random integer within a range.
@@ -199,8 +199,11 @@ function clearScore() {
 */
 function updateTimer() {
   // TODO: Write your code here.
-  // hint: this code is provided to you in the instructions.
-  
+  // hint: this code is provided to you in the instructions. -- DONE -- copied from instructions - MK 09/24/2025
+  if (time > 0) {
+    time -= 1;
+    timerDisplay.textContent = time;
+  }
   return time;
 }
 
