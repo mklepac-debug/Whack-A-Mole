@@ -172,9 +172,10 @@ function toggleVisibility(hole) {
 *
 */
 function updateScore() {
-  // TODO: Write your code here
-
-  return points;
+  // TODO: Write your code here -- DONE MK 09/24/2025
+  points++; //increment points global variable by 1 point
+  score.textContent = points; // update score.textContent with points
+  return points; // return updated points
 }
 
 /**
@@ -185,10 +186,10 @@ function updateScore() {
 *
 */
 function clearScore() {
-  // TODO: Write your code here
-  // points = 0;
-  // score.textContent = points;
-  return points;
+  // TODO: Write your code here -- DONE MK 09/24/2025
+  points = 0; //clear global points
+  score.textContent = points; // update scoreboard
+  return points; //return points
 }
 
 /**
@@ -224,9 +225,9 @@ function startTimer() {
 *
 */
 function whack(event) {
-  // TODO: Write your code here.
-  // call updateScore()
-  return points;
+  // TODO: Write your code here. -- DONE MK 09/24/2025
+  updateScore(); // update score when mole is wacked
+  return points; // retur pointss
 }
 
 /**
@@ -236,7 +237,10 @@ function whack(event) {
 */
 function setEventListeners(){
   // TODO: Write your code here
-
+  // loop over the moles
+  moles.forEach(mole => { 
+    mole.addEventListener('clock', whack); // click listener for each moles
+  });
   return moles;
 }
 
@@ -279,13 +283,13 @@ function stopGame(){
 
  * Note: Simply uncommenting `setDuration(10);` and `showUp();` is not enough. To make the game work, ensure all necessary functions listed above are called to initialize the score, timer, event listeners, and mole appearances. 
 */
-function startGame(){
-  //clearScore();
-  //stopGame();   //optional
-  //setDuration(10);
-  //setEventListeners();
-  //startTimer();
-  //showUp();
+function startGame(){ // FUNCTION provided -- just needed to uncomment the lines (per instructions) -- DONE MKm 09/24/2025
+  clearScore();
+  stopGame();   //optional
+  setDuration(10);
+  setEventListeners();
+  startTimer();
+  showUp();
   return "game started";
 }
 
